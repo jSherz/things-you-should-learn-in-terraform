@@ -1,5 +1,6 @@
 .idea/
 .terraform/
+# Normally this wouldn't be ignored, but we're excluding it from this tutorial as we lock providers to one version
 .terraform.lock*
 terraform.tfstate*
 .DS_Store

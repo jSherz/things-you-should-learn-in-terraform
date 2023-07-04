@@ -7,4 +7,11 @@ terraform {
     region         = "<region>"
     dynamodb_table = "my-tf-state-locks"
   }
+
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "5.6.2"
+    }
+  }
 }
