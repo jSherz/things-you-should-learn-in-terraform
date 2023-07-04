@@ -35,7 +35,7 @@ aws sns create-topic --name topic-b
 ```
 
 In `main.tf`, we have Terraform code that would create the above topics. Let's
-import them, but we're going to get it wrong on purpose:
+import them, making a mistake on purpose:
 
 ```bash
 ACCOUNT_ID=$(aws sts get-caller-identity --query 'Account' --output text)
@@ -168,6 +168,10 @@ terraform import aws_sns_topic.b arn:aws:sns:${REGION}:${ACCOUNT_ID}:topic-b
 
 * We must increment the `serial` value in our state file to be higher than the
   existing version when we push changes.
+
+## Further reading
+
+* [Remote State in the Terraform docs](https://developer.hashicorp.com/terraform/language/state/remote)
 
 ---
 
