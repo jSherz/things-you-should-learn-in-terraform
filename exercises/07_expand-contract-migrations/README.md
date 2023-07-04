@@ -8,7 +8,7 @@
 
 ![Things you should learn in Terraform](../../assets/logo.png)
 
-# Exercise 6 - expand and contract migrations
+# Exercise 7 - expand and contract migrations
 
 ⚠️ **This exercise requires that you've completed exercise 1** ⚠️
 
