@@ -1,6 +1,6 @@
 [Previous Exercise] | [Home]
 
-[Previous Exercise]: ../10_manually-changing-state/README.md
+[Previous Exercise]: ../09_fast-feedback-changing-modules/README.md
 [Home]: ../../README.md
 
 ---
