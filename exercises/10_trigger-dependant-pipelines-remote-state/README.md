@@ -1,14 +1,13 @@
-[Previous Exercise] | [Home] | [Next Exercise]
+[Previous Exercise] | [Home]
 
-[Previous Exercise]: ../08_import-existing-resources-no-disruption/README.md
+[Previous Exercise]: ../10_manually-changing-state/README.md
 [Home]: ../../README.md
-[Next Exercise]: ../10_manually-changing-state/README.md
 
 ---
 
 ![Things you should learn in Terraform](../../assets/logo.png)
 
-# Exercise 8 - fast feedback when changing Terraform modules
+# Exercise 10 - triggering dependant pipelines when using remote state
 
 ⚠️ **This exercise requires that you've completed exercise 1** ⚠️
 

@@ -6,6 +6,16 @@
 
 ---
 
-# Exercise  -
+![Things you should learn in Terraform](../../assets/logo.png)
 
-TODO
+# Exercise 8 - import existing resources with no disruption
+
+⚠️ **This exercise requires that you've completed exercise 1** ⚠️
+
+## 🍎 What did we learn?
+
+## Further reading
+
+---
+
+[Previous Exercise] | [Home] | [Next Exercise]

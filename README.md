@@ -53,9 +53,7 @@ first.
 
 * [9 - Fast feedback when changing modules]
 
-* [10 - Manually changing the state]
-
-* [11 - Trigger dependant pipelines when using remote state]
+* [10 - Trigger dependant pipelines when using remote state]
 
 [1 - Setting up remote state]: ./exercises/01_setting-up-remote-state/README.md
 
@@ -75,6 +73,4 @@ first.
 
 [9 - Fast feedback when changing modules]: ./exercises/09_fast-feedback-changing-modules/README.md
 
-[10 - Manually changing the state]: ./exercises/10_manually-changing-state/README.md
-
-[11 - Trigger dependant pipelines when using remote state]: ./exercises/11_trigger-dependant-pipelines-remote-state/README.md
+[10 - Trigger dependant pipelines when using remote state]: ./exercises/10_trigger-dependant-pipelines-remote-state/README.md
