@@ -1,9 +1,7 @@
 [Previous Exercise] | [Home] | [Next Exercise]
 
-[Previous Exercise]: ../06_set-variables-based-on-the-current-workspace/README.md
-
+[Previous Exercise]: ../05_move-a-resource-into-a-module/README.md
 [Home]: ../../README.md
-
 [Next Exercise]: ../07_expand-contract-migrations/README.md
 
 ---
