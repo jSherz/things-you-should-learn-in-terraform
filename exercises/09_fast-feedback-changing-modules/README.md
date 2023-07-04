@@ -8,7 +8,7 @@
 
 ![Things you should learn in Terraform](../../assets/logo.png)
 
-# Exercise 8 - fast feedback when changing Terraform modules
+# Exercise 9 - fast feedback when changing Terraform modules
 
 ⚠️ **This exercise requires that you've completed exercise 1** ⚠️
 
