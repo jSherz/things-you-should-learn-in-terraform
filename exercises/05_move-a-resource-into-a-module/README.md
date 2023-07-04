@@ -96,9 +96,11 @@ module "example" {
 }
 ```
 
-Run a Terraform plan:
+Run a Terraform init and plan:
 
 ```bash
+terraform init
+
 terraform plan
 ```
 
@@ -166,7 +168,8 @@ No changes. Your infrastructure matches the configuration.
 Terraform has compared your real infrastructure against your configuration and found no differences, so no changes are needed.
 ```
 
-Much better!
+Much better! We've performed our refactoring without the underlying SNS topic
+in AWS being modified.
 
 ## 🍎 What did we learn?
 
