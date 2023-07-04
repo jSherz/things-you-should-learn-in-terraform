@@ -195,7 +195,8 @@ terraform apply
 ```
 
 We've done the expand part, and we've made our changes. Our final cleanup, or
-the "contract" part is to remove the existing Lambda function.
+the "contract" part is to remove the existing Lambda function, and to run one
+final apply.
 
 ## 🍎 What did we learn?
 

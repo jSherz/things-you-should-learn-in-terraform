@@ -58,34 +58,6 @@ resource "aws_lambda_function" "example" {
   depends_on = [aws_cloudwatch_log_group.example]
 }
 
-###
-resource "aws_cloudwatch_log_group" "example_new" {
-  name              = "/aws/lambda/expand-contract-example-new"
-  retention_in_days = 30
-}
-
-resource "aws_lambda_function" "example_new" {
-  function_name    = "expand-contract-example-new"
-  role             = aws_iam_role.example.arn
-  memory_size      = 128
-  filename         = "hello-world-lambda.zip"
-  handler          = "index.handler"
-  source_code_hash = filebase64sha256("hello-world-lambda.zip")
-  runtime          = "nodejs18.x"
-
-  depends_on = [aws_cloudwatch_log_group.example_new]
-}
-
-resource "aws_lambda_permission" "example_new" {
-  statement_id  = "AllowExecutionFromAPIGateway"
-  action        = "lambda:InvokeFunction"
-  function_name = aws_lambda_function.example_new.function_name
-  principal     = "apigateway.amazonaws.com"
-
-  source_arn = "arn:aws:execute-api:${data.aws_region.this.name}:${data.aws_caller_identity.this.account_id}:${aws_api_gateway_rest_api.example.id}/*/${aws_api_gateway_method.example.http_method}${aws_api_gateway_resource.hello_world.path}"
-}
-###
-
 resource "aws_api_gateway_rest_api" "example" {
   name = "expand-contract-example"
 }
@@ -112,7 +84,7 @@ resource "aws_api_gateway_integration" "example" {
   integration_http_method = "POST"
   http_method             = "GET"
   resource_id             = aws_api_gateway_resource.hello_world.id
-  uri                     = aws_lambda_function.example_new.invoke_arn
+  uri                     = aws_lambda_function.example.invoke_arn
 }
 
 resource "aws_lambda_permission" "example" {
