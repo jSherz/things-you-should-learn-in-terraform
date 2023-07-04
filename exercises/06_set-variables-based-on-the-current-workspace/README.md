@@ -49,8 +49,7 @@ For example, the `staging` workspace would be:
 things-you-should-learn-in-terraform/06_set-variables-based-on-the-current-workspace/staging/terraform.tfstate
 ```
 
-Update the `terraform.tf` to have your account ID and region in, then run an
-init:
+Update the `terraform.tf` to have your account ID and region, then run an init:
 
 ```bash
 # Only if you haven't done this already
@@ -132,7 +131,7 @@ terraform apply
 ## Second approach - variable files
 
 You may instead prefer to have separate files, one per workspace/environment.
-You'll see we have two files in this project with a `tfvars` extension
+You'll see we have two files in this project with a `tfvars` extension:
 `staging.tfvars` and `production.tfvars`. We can adapt our usage of Terraform
 commands to include one of those. For example a plan:
 
@@ -148,7 +147,7 @@ terraform plan -var-file $(terraform workspace show).tfvars
 ```
 
 We can even create a wrapper scripts, e.g. `plan.sh`, `apply.sh`, `import.sh`
-that save you some typing.
+to save you some typing.
 
 Change the contents of `main.tf` to the following:
 
@@ -266,9 +265,12 @@ module "my_function_1" {
     * The `terraform workspace show` CLI command gets the current workspace
       name. It can be useful to use in scripts that wrap Terraform operations.
 
+* Keeping logic out of modules makes them easier to use as edge-cases arise.
+
 ## Further reading
 
 * [Input Variables in the Terraform docs](https://developer.hashicorp.com/terraform/language/values/variables)
+* [Workspaces in the Terraform docs](https://developer.hashicorp.com/terraform/language/state/workspaces) 
 
 ---
 
