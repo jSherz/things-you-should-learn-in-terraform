@@ -7,7 +7,7 @@ you'll likely encounter as a builder using Terraform. These examples are
 written for AWS, but could easily be adapted into a cloud provider of your
 choice.
 
-## Pre-requisites
+## Pre-requisites ✅
 
 It's recommended that you have a basic grasp of HCL, the language Terraform
 projects use, before you get started.
