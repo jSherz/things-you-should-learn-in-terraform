@@ -5,7 +5,7 @@
 
 ---
 
-# Exercise 1 - setting up remote state 
+# Exercise 1 - setting up remote state
 
 When you're collaborating with others as part of a team, you'll have to set up
 a method of sharing Terraform state. I recommend using remote state even when

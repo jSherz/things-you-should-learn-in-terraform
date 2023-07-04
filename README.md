@@ -23,11 +23,13 @@ first.
 
    Follow the instructions in [Install Terraform].
 
-2. Clone the project
+2. Install the AWS CLI (version 2).
 
-3. `cd` into the directory of the exercise you want to try.
+3. Clone the project
 
-4. Follow the instructions in the `README.md` file.
+4. `cd` into the directory of the exercise you want to try.
+
+5. Follow the instructions in the `README.md` file.
 
 [Install Terraform]: https://developer.hashicorp.com/terraform/downloads?product_intent=terraform
 
