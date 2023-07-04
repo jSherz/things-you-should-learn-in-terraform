@@ -5,6 +5,8 @@
 
 ---
 
+![Things you should learn in Terraform](../../assets/logo.png)
+
 # Exercise 1 - setting up remote state
 
 When you're collaborating with others as part of a team, you'll have to set up

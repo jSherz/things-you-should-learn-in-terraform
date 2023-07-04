@@ -6,6 +6,8 @@
 
 ---
 
+![Things you should learn in Terraform](../../assets/logo.png)
+
 # Exercise 2 - pull and inspect the state
 
 ⚠️ **This exercise requires that you've completed exercise 1** ⚠️

@@ -8,6 +8,8 @@
 
 ---
 
+![Things you should learn in Terraform](../../assets/logo.png)
+
 # Exercise 3 - recovering the state after bad changes
 
 ⚠️ **This exercise requires that you've completed exercise 1** ⚠️
