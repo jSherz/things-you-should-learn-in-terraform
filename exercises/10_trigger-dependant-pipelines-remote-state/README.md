@@ -145,6 +145,10 @@ in the GitHub docs.
 
 [Create a workflow dispatch event]: https://docs.github.com/en/rest/actions/workflows?apiVersion=2022-11-28#create-a-workflow-dispatch-event
 
+The `main.tf` file in this project demonstrates the full setup, in which a
+Lambda function is created to read the avatars contained in the bucket created
+in exercise nine. Give it a try in the CI/CD system you're most familiar with!
+
 ## 🍎 What did we learn?
 
 * Remote state storage lets us access Terraform state across projects.
