@@ -48,7 +48,7 @@ data "aws_iam_policy_document" "cloudtrail_bucket" {
 }
 
 module "cloudtrail_bucket" {
-  source = "git::ssh://git@github.com:jSherz/things-you-should-learn-in-terraform.git?ref=terraform-module-s3"
+  source = "git@github.com:jSherz/things-you-should-learn-in-terraform.git?ref=terraform-module-s3"
 
   name   = "${var.bucket_name}-cloudtrail"
   policy = data.aws_iam_policy_document.cloudtrail_bucket.json
