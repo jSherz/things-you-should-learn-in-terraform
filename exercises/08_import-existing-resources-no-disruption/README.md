@@ -277,7 +277,7 @@ Releasing state lock. This may take a few moments...
 ```
 
 We've removed a lot of the noise and values that are "known after apply" by
-targeting anything that needs a replacement first. We can now go argument by
+targeting anything that forces a replacement first. We can now go argument by
 argument with the contents of the plan and try to clear it down completely:
 
 ```terraform
@@ -323,6 +323,7 @@ project, and find the entry for the replication group.
 terraform state pull > state.json
 ```
 
+_In `state.json`:_
 ```json
 {
   "schema_version": 1,
