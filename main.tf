@@ -1,73 +1,39 @@
-locals {
-  cloudtrail_bucket = "${var.bucket_name}-cloudtrail"
-  cloudtrail_trail  = "s3-${var.bucket_name}"
+resource "aws_s3_bucket" "this" {
+  bucket = var.name
 }
 
-data "aws_iam_policy_document" "cloudtrail_bucket" {
-  statement {
-    sid       = "AWSCloudTrailAclCheck20150319"
-    effect    = "Allow"
-    resources = ["arn:aws:s3:::${local.cloudtrail_bucket}"]
-    actions   = ["s3:GetBucketAcl"]
+resource "aws_s3_bucket_ownership_controls" "this" {
+  bucket = aws_s3_bucket.this.bucket
 
-    condition {
-      test     = "StringEquals"
-      variable = "aws:SourceArn"
-      values   = ["arn:aws:cloudtrail:${data.aws_region.this.name}:${data.aws_caller_identity.this.account_id}:trail/${local.cloudtrail_trail}"]
-    }
-
-    principals {
-      type        = "Service"
-      identifiers = ["cloudtrail.amazonaws.com"]
-    }
+  rule {
+    object_ownership = "BucketOwnerEnforced"
   }
+}
 
-  statement {
-    sid       = "AWSCloudTrailWrite20150319"
-    effect    = "Allow"
-    resources = ["arn:aws:s3:::${local.cloudtrail_bucket}/*"]
-    actions   = ["s3:PutObject"]
+resource "aws_s3_bucket_versioning" "this" {
+  count = var.versioning ? 1 : 0
 
-    condition {
-      test     = "StringEquals"
-      variable = "s3:x-amz-acl"
-      values   = ["bucket-owner-full-control"]
-    }
+  bucket = aws_s3_bucket.this.bucket
 
-    condition {
-      test     = "StringEquals"
-      variable = "aws:SourceArn"
-      values   = ["arn:aws:cloudtrail:${data.aws_region.this.name}:${data.aws_caller_identity.this.account_id}:trail/${local.cloudtrail_trail}"]
-    }
+  versioning_configuration {
+    status = "Enabled"
+  }
+}
 
-    principals {
-      type        = "Service"
-      identifiers = ["cloudtrail.amazonaws.com"]
+resource "aws_s3_bucket_server_side_encryption_configuration" "this" {
+  bucket = aws_s3_bucket.this.bucket
+
+  rule {
+    apply_server_side_encryption_by_default {
+      sse_algorithm = "AES256"
     }
   }
 }
 
-module "cloudtrail_bucket" {
-  source = "../s3-bucket"
+resource "aws_s3_bucket_policy" "this" {
+  count = var.policy != null ? 1 : 0
 
-  name   = "${var.bucket_name}-cloudtrail"
-  policy = data.aws_iam_policy_document.cloudtrail_bucket.json
-}
+  bucket = aws_s3_bucket.this.bucket
 
-resource "aws_cloudtrail" "main" {
-  name           = "s3-${var.bucket_name}"
-  s3_bucket_name = module.cloudtrail_bucket.name
-
-  event_selector {
-    read_write_type           = "All"
-    include_management_events = false
-
-    data_resource {
-      type   = "AWS::S3::Object"
-      values = ["arn:aws:s3:::${var.bucket_name}/"]
-    }
-  }
-
-  # Ensure the whole module has been created as we require the aws_s3_bucket_policy resource
-  depends_on = [module.cloudtrail_bucket]
+  policy = var.policy
 }

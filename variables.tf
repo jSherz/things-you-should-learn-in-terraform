@@ -1,4 +1,16 @@
-variable "bucket_name" {
+variable "name" {
   type        = string
-  description = "The S3 bucket you want to record data events for."
+  description = "Bucket name."
+}
+
+variable "versioning" {
+  type        = bool
+  default     = true
+  description = "Enable bucket versioning?"
+}
+
+variable "policy" {
+  type        = string
+  default     = null
+  description = "Bucket IAM policy."
 }
