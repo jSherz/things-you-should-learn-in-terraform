@@ -74,3 +74,8 @@ first.
 [9 - Fast feedback when changing modules]: ./exercises/09_fast-feedback-changing-modules/README.md
 
 [10 - Trigger dependant pipelines when using remote state]: ./exercises/10_trigger-dependant-pipelines-remote-state/README.md
+
+## Need a hand with AWS in the cloud?
+
+I'm currently available for contract work - reach out on LinkedIn if I can help
+you and your team excel in AWS: https://www.linkedin.com/in/jsherz/
