@@ -493,8 +493,8 @@ terraform destroy
 * We can adapt Terraform documentation examples and run through cycles of plan,
   modify, plan to build Terraform code for existing infrastructure.
 
-* Tackling any arguments with `# forces new resource` first gives us a much
-  cleaner view of what we've got left to fix.
+* Tackling any arguments with `# forces forces replacement` first gives us a
+  much cleaner view of what we've got left to fix.
 
 * Creating a copy of the resource we've imported into Terraform ensures that it
   will create successfully, for example if we have to recover it in a disaster
