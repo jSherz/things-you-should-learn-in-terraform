@@ -473,6 +473,12 @@ flowchart TD
     K -->|Yes| I(Done!)
 ```
 
+Don't forget to tear down your Elasticache cluster(s)!
+
+```bash
+terraform destroy
+```
+
 ## 🍎 What did we learn?
 
 * One run through a wizard in AWS can create many resources, each of which
